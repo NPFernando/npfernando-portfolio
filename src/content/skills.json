@@ -1,0 +1,131 @@
+{
+  "updated": "2025-12-16",
+  "capabilities": [
+    {
+      "capability": "Workflow Orchestration",
+      "narrative": "Builds resilient automations for MSP environments using Rewst, n8n, and Python to reduce manual tickets and speed fulfillment.",
+      "skills": [
+        {
+          "name": "Rewst playbooks",
+          "level": "advanced",
+          "context": "Delivered multi-tenant playbooks with RBAC, approvals, and reusable components across clients."
+        },
+        {
+          "name": "n8n pipelines",
+          "level": "advanced",
+          "context": "Authored event-driven n8n workflows for service desk triage, webhook ingestion, and SLA-aware escalations."
+        },
+        {
+          "name": "Python automation",
+          "level": "advanced",
+          "context": "Built API-centric helpers and integrations to normalize data across disparate vendor systems."
+        }
+      ]
+    },
+    {
+      "capability": "Cloud Automation",
+      "narrative": "Automates Azure and AWS operations with policy-aware scripts, infrastructure templates, and secure credential handling.",
+      "skills": [
+        {
+          "name": "Azure automation",
+          "level": "advanced",
+          "context": "Provisioned resources via PowerShell and ARM/Bicep modules; enforced tagging and policy compliance."
+        },
+        {
+          "name": "AWS workflows",
+          "level": "working",
+          "context": "Automated IAM and resource lifecycles with Python/SDKs while keeping least-privilege defaults."
+        },
+        {
+          "name": "IaC foundations",
+          "level": "working",
+          "context": "Introduced Terraform/Bicep baselines for repeatable environments and peer-reviewed changes."
+        }
+      ]
+    },
+    {
+      "capability": "Identity & Lifecycle",
+      "narrative": "Designs user lifecycle automation with guardrails that respect approvals, audit trails, and tenancy boundaries.",
+      "skills": [
+        {
+          "name": "Entra ID automation",
+          "level": "advanced",
+          "context": "Automated joiner/mover/leaver flows with Graph APIs, licensing assignments, and access reviews."
+        },
+        {
+          "name": "Service desk integration",
+          "level": "advanced",
+          "context": "Linked automation to ITSM queues with status updates, rollback paths, and user notifications."
+        },
+        {
+          "name": "Policy and approvals",
+          "level": "working",
+          "context": "Built approval steps and audit logs into workflows to satisfy MSP governance requirements."
+        }
+      ]
+    },
+    {
+      "capability": "API & Integration Engineering",
+      "narrative": "Connects vendor APIs and event sources into coherent automation while managing rate limits, idempotency, and retries.",
+      "skills": [
+        {
+          "name": "REST & webhook design",
+          "level": "advanced",
+          "context": "Created standardized connectors with retry, circuit breaker, and correlation ID support."
+        },
+        {
+          "name": "Monitoring hooks",
+          "level": "working",
+          "context": "Embedded metrics/logging in flows to surface success/failure rates in shared dashboards."
+        },
+        {
+          "name": "Data shaping",
+          "level": "working",
+          "context": "Normalized payloads across SaaS tools so downstream automations stay stable when vendors change."
+        }
+      ]
+    },
+    {
+      "capability": "Reliability & Operations",
+      "narrative": "Keeps automations observable, cost-aware, and recoverable with clear runbooks and incident pathways.",
+      "skills": [
+        {
+          "name": "Runbook automation",
+          "level": "advanced",
+          "context": "Codified routine fixes and checks so on-call teams can remediate with one-click executions."
+        },
+        {
+          "name": "SLA/SLO alignment",
+          "level": "working",
+          "context": "Mapped automation SLAs to service tiers, ensuring noisy tasks do not impact high-priority work."
+        },
+        {
+          "name": "Post-incident hardening",
+          "level": "working",
+          "context": "Fed incident learnings into new playbooks, tests, and monitoring thresholds."
+        }
+      ]
+    },
+    {
+      "capability": "Technical Leadership",
+      "narrative": "Leads automation initiatives end-to-end, mentoring engineers and standardizing reusable assets across clients.",
+      "skills": [
+        {
+          "name": "Discovery to delivery",
+          "level": "advanced",
+          "context": "Handles pre-sales discovery, feasibility estimates, and stakeholder alignment before building."
+        },
+        {
+          "name": "Reusable assets",
+          "level": "advanced",
+          "context": "Published modular building blocks so teams can assemble new automations without rewriting core logic."
+        },
+        {
+          "name": "Mentoring",
+          "level": "working",
+          "context": "Delegates structured tasks to juniors and reviews complex integrations to maintain quality."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Nelson Fernando cloud portfolio preview">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2f5bff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38a3a5" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b1021"/>
+  <rect x="40" y="40" width="1120" height="550" rx="32" fill="url(#bg)" opacity="0.95"/>
+  <text x="120" y="220" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="700">Naveen Fernando</text>
+  <text x="120" y="280" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">Automation &amp; Systems Engineer</text>
+  <text x="120" y="350" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="26">Workflow orchestration (Rewst, n8n, Python) for MSPs.</text>
+  <text x="120" y="420" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="24">Cloud automation across Azure/AWS with approvals and audit.</text>
+</svg>

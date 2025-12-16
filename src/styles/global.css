@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --text: #0f172a;
+  --card: #ffffff;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0b1021;
+  --text: #e2e8f0;
+  --card: #0f172a;
+  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--bg)] text-[var(--text)] font-body antialiased;
+}
+
+a {
+  @apply transition-colors duration-150;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  @apply rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-card transition hover:-translate-y-1 hover:shadow-lg;
+}
+
+.section-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.tag {
+  @apply inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/40 dark:text-primary-100;
+}

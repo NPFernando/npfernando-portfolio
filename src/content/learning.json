@@ -1,0 +1,69 @@
+{
+  "tracks": [
+    {
+      "title": "Rewst & n8n Reliability",
+      "focus": "Make playbooks resilient with approvals, retries, and connector contract tests.",
+      "eta": "Q2 2026",
+      "items": [
+        "Harden error handling and idempotency across high-traffic automations.",
+        "Add contract tests for key connectors to catch vendor API drift early.",
+        "Ship reusable approval/notification components so new flows inherit governance."
+      ]
+    },
+    {
+      "title": "Multi-cloud Automation Depth",
+      "focus": "Broaden Azure/AWS coverage with IaC hygiene and identity automation.",
+      "eta": "Q3 2026",
+      "items": [
+        "Expand Bicep/Terraform modules with policy baselines for MSP tenants.",
+        "Instrument PowerShell/Python scripts with OpenTelemetry for success/failure rates.",
+        "Automate joiner/mover/leaver flows with Graph/Azure AD plus SaaS provisioning."
+      ]
+    },
+    {
+      "title": "Observability & Runbooks",
+      "focus": "Treat automations like services with SLOs, dashboards, and safe remediation.",
+      "eta": "Ongoing",
+      "items": [
+        "Publish SLOs for critical automations and alert on error budgets.",
+        "Build centralized dashboards for automation success/failure and costs.",
+        "Codify common incident runbooks with one-click, audited execution."
+      ]
+    }
+  ],
+  "certifications": [
+    { "title": "Clean Automation Certified: Automation Engineer (Rewst, Jan 2025)", "status": "completed" },
+    { "title": "Foundations Certified: Automation Practitioner (Rewst, Oct 2024)", "status": "completed" },
+    { "title": "Microsoft Certified: Azure Fundamentals (Dec 2023)", "status": "completed" },
+    { "title": "Cisco CyberOps Associate (Dec 2022)", "status": "completed" },
+    { "title": "CCNA: Enterprise Networking, Security, and Automation (Jul 2022)", "status": "completed" },
+    { "title": "Google IT Support / Cloud Fundamentals (Jan 2023)", "status": "completed" }
+  ],
+  "experiments": [
+    "AI-assisted runbook suggestions with approvals and grounded context.",
+    "Connector smoke tests on schedules to detect API/auth changes early.",
+    "Cost and ROI scoring per playbook to prioritize automation backlog."
+  ],
+  "roadmap": [
+    {
+      "milestone": "Catalog v2 rollout",
+      "impact": "Tenant-safe automation catalog with approvals and reporting for service desk agents.",
+      "timeline": "In progress"
+    },
+    {
+      "milestone": "Shared telemetry layer",
+      "impact": "Centralize OpenTelemetry metrics for automation success/failure and latency.",
+      "timeline": "Next 60 days"
+    },
+    {
+      "milestone": "Identity automation extensions",
+      "impact": "Broaden Graph/Azure AD coverage for lifecycle + SaaS provisioning.",
+      "timeline": "Next 90 days"
+    },
+    {
+      "milestone": "n8n/Functions reliability harness",
+      "impact": "E2E tests and canary flows for critical orchestrations across tenants.",
+      "timeline": "Planned"
+    }
+  ]
+}
