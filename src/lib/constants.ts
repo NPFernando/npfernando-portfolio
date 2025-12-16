@@ -3,12 +3,12 @@ export const SITE = {
   role: 'Automation & Systems Engineer',
   location: 'Colombo, Sri Lanka',
   focusAreas: [
-    'Workflow orchestration (Rewst, n8n, Python)',
-    'Cloud automation (Azure/AWS)',
+    'Workflow orchestration (Rewst, n8n, Power Automate)',
+    'Cloud automation (Azure/AWS/GWS)',
     'Identity & lifecycle automation',
   ],
   summary:
-    'Automation & Systems Engineer (B.Sc. Computer Systems & Networking) delivering multi-tenant workflow automation across Python, Rewst, n8n, PowerShell, and Azure/AWS to reduce operational toil for MSP teams.',
+    'Automation & Systems Engineer (B.Sc. Computer Systems & Networking) delivering multi-tenant workflow automation across Rewst, n8n, Power Automate, Python, PowerShell, JavaScript/TypeScript, and Azure/AWS/GWS to reduce operational toil for MSP teams.',
   resumeUrl: '/cv/index.html',
   email: 'fernandonaveen2000@gmail.com',
   emailObfuscated: 'fernandonaveen2000 [at] gmail.com',

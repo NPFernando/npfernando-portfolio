@@ -16,6 +16,11 @@
           "context": "Authored event-driven n8n workflows for service desk triage, webhook ingestion, and SLA-aware escalations."
         },
         {
+          "name": "Power Automate",
+          "level": "working",
+          "context": "Built Power Automate flows for approvals and lightweight integrations when teams are Microsoft 365-centric."
+        },
+        {
           "name": "Python automation",
           "level": "advanced",
           "context": "Built API-centric helpers and integrations to normalize data across disparate vendor systems."
@@ -35,6 +40,11 @@
           "name": "AWS workflows",
           "level": "working",
           "context": "Automated IAM and resource lifecycles with Python/SDKs while keeping least-privilege defaults."
+        },
+        {
+          "name": "Google Workspace (GWS)",
+          "level": "working",
+          "context": "Automated workspace admin tasks and user lifecycle updates for GWS tenants."
         },
         {
           "name": "IaC foundations",
@@ -124,6 +134,27 @@
           "name": "Mentoring",
           "level": "working",
           "context": "Delegates structured tasks to juniors and reviews complex integrations to maintain quality."
+        }
+      ]
+    },
+    {
+      "capability": "Scripting & Languages",
+      "narrative": "Uses the right language for the job while keeping scripts maintainable and well-tested.",
+      "skills": [
+        {
+          "name": "Python",
+          "level": "advanced",
+          "context": "API clients, utilities, and automation helpers for orchestration platforms."
+        },
+        {
+          "name": "PowerShell",
+          "level": "advanced",
+          "context": "Automation for Azure, Intune, and infrastructure tasks with proper logging and safeguards."
+        },
+        {
+          "name": "JavaScript/TypeScript",
+          "level": "working",
+          "context": "Extending n8n nodes, frontend tweaks, and integration scripts."
         }
       ]
     }

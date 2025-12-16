@@ -98,8 +98,8 @@ const Hero = ({ onOpenCV, cvButtonRef }: HeroProps) => (
 
         <div className="grid gap-3 sm:grid-cols-3">
           {[
-            { label: 'Workflow automation', value: 'Rewst · n8n · Python', icon: <ShieldCheck className="h-4 w-4" aria-hidden="true" /> },
-            { label: 'Cloud automation', value: 'Azure · AWS · PowerShell', icon: <CloudCog className="h-4 w-4" aria-hidden="true" /> },
+            { label: 'Workflow automation', value: 'Rewst · n8n · Power Automate', icon: <ShieldCheck className="h-4 w-4" aria-hidden="true" /> },
+            { label: 'Cloud automation', value: 'Azure · AWS · GWS', icon: <CloudCog className="h-4 w-4" aria-hidden="true" /> },
             { label: 'Service reliability', value: 'Approvals · audit · SLO aware', icon: <Sparkles className="h-4 w-4" aria-hidden="true" /> },
           ].map((item) => (
             <div key={item.label} className="card flex items-center gap-3 px-4 py-3">
@@ -310,83 +310,86 @@ const LiveGitHub = () => {
   return (
     <Section
       id="github"
-      title="Live GitHub signals"
-      eyebrow="Activity"
-      description="Recent repos and profile data pulled at runtime. Provide a token via env to avoid rate limits."
+      title="Recent repositories"
+      eyebrow="Live GitHub data"
+      description={`Latest updates for ${username}. Provide a token via env to avoid rate limits.`}
     >
-      <div className="grid gap-4 lg:grid-cols-[0.9fr,1.1fr]">
-        <Card
-          title={profile?.name || username}
-          subtitle={profile?.bio || 'GitHub profile'}
-          className="h-full"
-          actions={
-            <a
-              href={profile?.html_url || `https://github.com/${username}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-2 text-xs font-semibold text-[var(--muted)] transition hover:border-primary-200 hover:text-primary-600"
-            >
-              View profile
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-          }
-        >
-          {loading && <p>Loading live GitHub data…</p>}
-          {error && (
-            <p className="text-red-500">
-              Could not load GitHub data. Check your token or rate limits ({error}).
-            </p>
-          )}
-          {!loading && !error && profile && (
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="rounded-xl border border-[var(--border)] p-3">
-                <p className="text-xs text-[var(--muted)]">Followers</p>
-                <p className="text-lg font-semibold">{profile.followers}</p>
+      <div className="card space-y-4 border-[var(--border)] bg-[var(--card)]/90 p-4 shadow-card">
+        <div className="grid gap-4 lg:grid-cols-[0.9fr,1.1fr]">
+          <Card
+            title={profile?.name || username}
+            subtitle={profile?.bio || 'GitHub profile'}
+            className="h-full bg-transparent shadow-none border-0"
+            actions={
+              <a
+                href={profile?.html_url || `https://github.com/${username}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-2 text-xs font-semibold text-[var(--muted)] transition hover:border-primary-200 hover:text-primary-600"
+              >
+                View profile
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            }
+          >
+            {loading && <p>Loading live GitHub data…</p>}
+            {error && (
+              <p className="text-red-500">
+                Could not load GitHub data. Check your token or rate limits ({error}).
+              </p>
+            )}
+            {!loading && !error && profile && (
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="rounded-xl border border-[var(--border)] p-3">
+                  <p className="text-xs text-[var(--muted)]">Followers</p>
+                  <p className="text-lg font-semibold">{profile.followers}</p>
+                </div>
+                <div className="rounded-xl border border-[var(--border)] p-3">
+                  <p className="text-xs text-[var(--muted)]">Public repos</p>
+                  <p className="text-lg font-semibold">{profile.public_repos}</p>
+                </div>
+                <div className="rounded-xl border border-[var(--border)] p-3">
+                  <p className="text-xs text-[var(--muted)]">Following</p>
+                  <p className="text-lg font-semibold">{profile.following}</p>
+                </div>
+                <div className="rounded-xl border border-[var(--border)] p-3">
+                  <p className="text-xs text-[var(--muted)]">Location</p>
+                  <p className="text-sm font-semibold">{profile.location || '—'}</p>
+                </div>
               </div>
-              <div className="rounded-xl border border-[var(--border)] p-3">
-                <p className="text-xs text-[var(--muted)]">Public repos</p>
-                <p className="text-lg font-semibold">{profile.public_repos}</p>
-              </div>
-              <div className="rounded-xl border border-[var(--border)] p-3">
-                <p className="text-xs text-[var(--muted)]">Following</p>
-                <p className="text-lg font-semibold">{profile.following}</p>
-              </div>
-              <div className="rounded-xl border border-[var(--border)] p-3">
-                <p className="text-xs text-[var(--muted)]">Location</p>
-                <p className="text-sm font-semibold">{profile.location || '—'}</p>
-              </div>
+            )}
+            {!loading && !error && !profile && <p>No profile data available.</p>}
+          </Card>
+
+          <div className="space-y-2">
+            {loading && <p>Loading repositories…</p>}
+            {error && <p className="text-red-500">Could not load repos. {error}</p>}
+            {!loading && !error && repos.length === 0 && <p>No recent repositories found.</p>}
+            <div className="grid gap-3 md:grid-cols-2">
+              {repos.map((repo) => (
+                <div key={repo.id} className="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-4 shadow-sm">
+                  <div className="flex items-center justify-between gap-2">
+                    <a
+                      href={repo.html_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-semibold text-primary-600 hover:text-primary-500"
+                    >
+                      {repo.name}
+                    </a>
+                    <Badge tone="info">{repo.language || 'N/A'}</Badge>
+                  </div>
+                  <p className="mt-2 text-xs text-[var(--muted)]">{repo.description || 'No description'}</p>
+                  <div className="mt-3 flex items-center gap-3 text-xs text-[var(--muted)]">
+                    <span>★ {repo.stargazers_count}</span>
+                    <span>⑂ {repo.forks_count}</span>
+                    <span>Updated {new Date(repo.updated_at).toLocaleDateString()}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          )}
-          {!loading && !error && !profile && <p>No profile data available.</p>}
-        </Card>
-        <Card title="Recent repositories" subtitle={`Latest updates for ${username}`}>
-          {loading && <p>Loading repositories…</p>}
-          {error && <p className="text-red-500">Could not load repos. {error}</p>}
-          {!loading && !error && repos.length === 0 && <p>No recent repositories found.</p>}
-          <div className="grid gap-3 sm:grid-cols-2">
-            {repos.map((repo) => (
-              <div key={repo.id} className="rounded-xl border border-[var(--border)] p-3 shadow-sm">
-                <div className="flex items-center justify-between gap-2">
-                  <a
-                    href={repo.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-semibold text-primary-600 hover:text-primary-500"
-                  >
-                    {repo.name}
-                  </a>
-                  <Badge tone="info">{repo.language || 'N/A'}</Badge>
-                </div>
-                <p className="mt-1 text-xs text-[var(--muted)]">{repo.description || 'No description'}</p>
-                <div className="mt-2 flex items-center gap-3 text-xs text-[var(--muted)]">
-                  <span>★ {repo.stargazers_count}</span>
-                  <span>⑂ {repo.forks_count}</span>
-                  <span>Updated {new Date(repo.updated_at).toLocaleDateString()}</span>
-                </div>
-              </div>
-            ))}
           </div>
-        </Card>
+        </div>
       </div>
     </Section>
   );

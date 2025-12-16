@@ -39,6 +39,18 @@ img {
   height: auto;
 }
 
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
 .card {
   @apply rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-card transition hover:-translate-y-1 hover:shadow-lg;
 }
