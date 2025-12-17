@@ -6,28 +6,7 @@
       "eta": "Q2 2026",
       "items": [
         "Harden error handling and idempotency across high-traffic automations.",
-        "Add contract tests for key connectors to catch vendor API drift early.",
-        "Ship reusable approval/notification components so new flows inherit governance."
-      ]
-    },
-    {
-      "title": "Multi-cloud Automation Depth",
-      "focus": "Broaden Azure/AWS coverage with IaC hygiene and identity automation.",
-      "eta": "Q3 2026",
-      "items": [
-        "Expand Bicep/Terraform modules with policy baselines for MSP tenants.",
-        "Instrument PowerShell/Python scripts with OpenTelemetry for success/failure rates.",
-        "Automate joiner/mover/leaver flows with Graph/Azure AD plus SaaS provisioning."
-      ]
-    },
-    {
-      "title": "Observability & Runbooks",
-      "focus": "Treat automations like services with SLOs, dashboards, and safe remediation.",
-      "eta": "Ongoing",
-      "items": [
-        "Publish SLOs for critical automations and alert on error budgets.",
-        "Build centralized dashboards for automation success/failure and costs.",
-        "Codify common incident runbooks with one-click, audited execution."
+        "Design failure detection in workflows, use AI to classify success/failure, auto-create support tickets for failures, and extend coverage to internal and external user services."
       ]
     }
   ],
@@ -40,30 +19,16 @@
     { "title": "Google IT Support / Cloud Fundamentals (Jan 2023)", "status": "completed" }
   ],
   "experiments": [
-    "AI-assisted runbook suggestions with approvals and grounded context.",
-    "Connector smoke tests on schedules to detect API/auth changes early.",
-    "Cost and ROI scoring per playbook to prioritize automation backlog."
+    "Hands-on discovery work with agent CLI patterns.",
+    "Agent CLI usage in automations to validate reliability and ergonomics.",
+    "Connect devices via SSH from n8n to trigger agent CLI actions for automation/read/write in local environments.",
+    "Work with MSP triggers to build n8n workflows that hand off tasks to AI agents end-to-end."
   ],
   "roadmap": [
     {
-      "milestone": "Catalog v2 rollout",
-      "impact": "Tenant-safe automation catalog with approvals and reporting for service desk agents.",
-      "timeline": "In progress"
-    },
-    {
-      "milestone": "Shared telemetry layer",
-      "impact": "Centralize OpenTelemetry metrics for automation success/failure and latency.",
-      "timeline": "Next 60 days"
-    },
-    {
-      "milestone": "Identity automation extensions",
-      "impact": "Broaden Graph/Azure AD coverage for lifecycle + SaaS provisioning.",
-      "timeline": "Next 90 days"
-    },
-    {
-      "milestone": "n8n/Functions reliability harness",
-      "impact": "E2E tests and canary flows for critical orchestrations across tenants.",
-      "timeline": "Planned"
+      "milestone": "Self-hostable home automation stack",
+      "impact": "Discover, plan, and implement a self-hostable, open-source stack (free-tier friendly) for home automation/CCTV using Frigate NVR and local AI surveillance.",
+      "timeline": "Long term"
     }
   ]
 }

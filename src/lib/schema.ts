@@ -26,9 +26,9 @@ export const SkillsDocumentSchema = z.object({
 
 export const ProjectSchema = z.object({
   name: z.string(),
-  problem: z.string(),
-  architecture: z.string(),
-  tools: z.array(z.string()),
+  problem: z.string().optional(),
+  architecture: z.string().optional(),
+  tools: z.array(z.string()).optional(),
   tradeOffs: z.array(z.string()).optional(),
   status: z.string(),
   links: z.array(LinkSchema).optional(),

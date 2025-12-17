@@ -2,17 +2,37 @@
   {
     "name": "n8n Community Node: text.lk SMS",
     "problem": "Required reliable SMS notifications for a billing-related project in Sri Lanka, but n8n lacked a native SMS integration suitable for local providers.",
-    "architecture": "Designed and developed a custom n8n community node (`n8n-nodes-textdotlk`) that wraps the text.lk SMS API, enabling dynamic SMS delivery to any phone number directly within n8n workflows without relying on repeated custom HTTP nodes.",
+    "architecture": "Designed and developed a custom n8n community node (n8n-nodes-textdotlk) that wraps the text.lk SMS API, enabling dynamic SMS delivery to any phone number directly within n8n workflows without relying on repeated custom HTTP nodes.",
     "tools": ["n8n", "TypeScript", "text.lk API", "npm"],
     "impact": "Enabled automated billing and notification workflows using a local Sri Lankan SMS provider; reduced workflow complexity and improved reusability.",
     "tradeOffs": [
       "Scoped initial release to sending SMS; future work can add delivery status callbacks.",
       "Published as a community node to keep reuse simple without bundling into larger playbooks."
     ],
-    "status": "Publicly available via npm and GitHub for Use",
+    "status": "Public via npm and GitHub",
     "links": [
       { "label": "GitHub", "href": "https://github.com/NPFernando/n8n-nodes-textdotlk" },
       { "label": "npm", "href": "https://www.npmjs.com/package/n8n-nodes-textdotlk" }
     ]
+  },
+  {
+    "name": "npfernando-portfolio",
+    "problem": "Needed a personal site for achievements and project showcase.",
+    "architecture": "Static-first, Azure-optimized portfolio built with React, Vite, and TypeScript. Content is typed and validated with Zod, styled with Tailwind CSS, and wired for GitHub + Azure Static Web Apps CI/CD.",
+    "tools": ["React", "TypeScript", "Vite", "Tailwind CSS", "Azure Static Web Apps"],
+    "tradeOffs": [
+      "Static-first approach favors performance; dynamic data (GitHub) is client-fetched."
+    ],
+    "status": "Hosted",
+    "links": [
+      { "label": "Naveen Fernando Portfolio", "href": "https://portfolio.naveen.fernandofamily.com" }
+    ]
+  },
+  {
+    "name": "Fernando Family (coming soon)",
+    "problem": "Family site for updates and shared resources.",
+    "architecture": "Lightweight static site with a CMS-friendly structure.",
+    "tools": ["Next.js", "TypeScript"],
+    "status": "Coming soon"
   }
 ]

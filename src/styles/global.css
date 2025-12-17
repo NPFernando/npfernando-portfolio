@@ -9,8 +9,8 @@
   --bg: #f6f7fb;
   --text: #0f172a;
   --card: #ffffff;
-  --muted: #475569;
-  --border: rgba(15, 23, 42, 0.08);
+  --muted: #3b4960;
+  --border: rgba(15, 23, 42, 0.12);
 }
 
 .dark {
@@ -18,8 +18,8 @@
   --bg: #0b1021;
   --text: #e2e8f0;
   --card: #0f172a;
-  --muted: #94a3b8;
-  --border: rgba(255, 255, 255, 0.08);
+  --muted: #c3cce0;
+  --border: rgba(255, 255, 255, 0.14);
 }
 
 * {
@@ -62,4 +62,8 @@ h5 {
 
 .tag {
   @apply inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/40 dark:text-primary-100;
+}
+
+.list-spaced > li + li {
+  margin-top: 0.45rem;
 }
