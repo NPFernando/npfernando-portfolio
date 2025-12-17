@@ -57,6 +57,10 @@ npm run analyze  # Optional: bundle treemap (requires rollup-plugin-visualizer)
 - **Theming**: Tweak CSS variables in `src/styles/global.css` and Tailwind tokens in `tailwind.config.cjs`.
 - **Accessibility & performance**: Semantic landmarks, ARIA where relevant, dark/light support, and minimal assets. Use `loading="lazy"` + width/height on any future media. Add Lighthouse/axe checks to CI as needed.
 
+## Licensing and assets
+- Code is MIT licensed (see `LICENSE`).
+- Personal assets (portrait, favicon/og art, CV files under `public/cv`, and any photos in `img/`) are provided for this portfolio only and are not licensed for reuse or redistribution. Please do not copy or republish them.
+
 ## Extending further
 - **Azure Functions**: Scaffold endpoints in `api/` and share Zod contracts with the frontend. Protect routes via `staticwebapp.config.json` when Entra ID is enabled.
 - **Auth-ready**: Navigation and sections are structured to support protected dashboards; plug Entra ID once identities are available.
