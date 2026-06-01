@@ -25,17 +25,18 @@ staticwebapp.config.json # SPA routing + headers
 
 ## Getting started
 ```bash
-npm install
+npm ci
 npm run dev      # local dev on http://localhost:5173
 npm run lint     # ESLint (flat config) with Tailwind plugin
+npm run format   # Prettier check
 npm run build    # Type-check + Vite production build
 npm run analyze  # Optional: bundle treemap (requires rollup-plugin-visualizer)
 ```
 
 ### Live GitHub data
-1. Copy `.env.example` to `.env.local` (or `.env`) and set `VITE_GITHUB_USERNAME` to your GitHub handle.
-2. (Recommended) Generate a fine-grained personal access token and set `VITE_GITHUB_TOKEN` to avoid rate limits. Scopes: public profile + read-only repo metadata; no code access required.
-3. The site will fetch profile + recent repos at runtime. Token is optional for local dev but helpful in production to avoid 403s from rate limits.
+1. Copy `.env.example` to `.env.local` and set `VITE_GITHUB_USERNAME` to your GitHub handle.
+2. The site fetches public profile and recent repository data at runtime using the unauthenticated GitHub API.
+3. Do not place a GitHub PAT or any other secret in `VITE_*` variables. Vite exposes frontend environment variables to the browser bundle. If authenticated GitHub calls are needed later, add an Azure Function proxy and keep the token server-side.
 
 ### Toggle visibility
 - `VITE_SHOW_PROJECTS=true|false` controls whether the Projects section renders (default `true`).
@@ -45,8 +46,8 @@ npm run analyze  # Optional: bundle treemap (requires rollup-plugin-visualizer)
 
 ## Deploying to Azure Static Web Apps
 1. Create a Static Web App (Free tier is fine) and capture the deployment token.
-2. Add the token to GitHub secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`.
-3. Push to `main`. The workflow at `.github/workflows/azure-static-web-apps.yml` will lint, build, and upload `dist/`. Pull requests get preview environments; closing a PR tears the preview down.
+2. Add the token to GitHub secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN_ZEALOUS_ROCK_040D5B91E`.
+3. Push to `main`. The workflow at `.github/workflows/azure-static-web-apps-zealous-rock-040d5b91e.yml` will install dependencies, lint, build, and upload the prebuilt `dist/` artifact. Pull requests get preview environments; closing a PR tears the preview down.
 4. When you add serverless endpoints, place Functions under `api/` and set `api_location` in the workflow as needed (already reserved).
 
 ## Content & customization

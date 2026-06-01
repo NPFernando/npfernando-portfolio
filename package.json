@@ -2,7 +2,28 @@
   "name": "npfernando-personal-portfolio",
   "private": false,
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Static-first React, Vite, and TypeScript portfolio for Naveen Fernando's automation and systems engineering work.",
+  "author": "Naveen Fernando",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NPFernando/npfernando-portfolio.git"
+  },
+  "homepage": "https://github.com/NPFernando/npfernando-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/NPFernando/npfernando-portfolio/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "typescript",
+    "azure-static-web-apps",
+    "automation-engineering"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

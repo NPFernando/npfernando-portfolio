@@ -24,15 +24,10 @@ export type GitHubProfile = {
 };
 
 const username = import.meta.env.VITE_GITHUB_USERNAME || 'NPFernando';
-const token = import.meta.env.VITE_GITHUB_TOKEN;
 
 const headers: Record<string, string> = {
   Accept: 'application/vnd.github+json',
 };
-
-if (token) {
-  headers.Authorization = `Bearer ${token}`;
-}
 
 async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url, { headers });
