@@ -18,9 +18,14 @@ import {
 import Badge from '@/components/Badge';
 import Card from '@/components/Card';
 import Section from '@/components/Section';
-import { SITE, UI_FLAGS } from '@/lib/constants';
+import { CURRENT_FOCUS, SITE, UI_FLAGS } from '@/lib/constants';
 import { learningContent, projectsContent, skillsContent } from '@/lib/content';
-import { getGitHubProfile, getRecentRepos, type GitHubProfile, type GitHubRepo } from '@/lib/github';
+import {
+  getGitHubProfile,
+  getRecentRepos,
+  type GitHubProfile,
+  type GitHubRepo,
+} from '@/lib/github';
 import type { SkillLevel } from '@/lib/schema';
 
 const levelTone: Record<SkillLevel, Parameters<typeof Badge>[0]['tone']> = {
@@ -38,18 +43,35 @@ const levelLabel: Record<SkillLevel, string> = {
 };
 
 const heroStats = [
-  { label: 'Workflow automation', value: 'Rewst / n8n / Power Automate', icon: <ShieldCheck className="h-4 w-4" aria-hidden="true" /> },
-  { label: 'Cloud automation', value: 'Azure / AWS / GWS', icon: <CloudCog className="h-4 w-4" aria-hidden="true" /> },
-  { label: 'Service reliability', value: 'Approvals / audit / SLO-aware', icon: <Sparkles className="h-4 w-4" aria-hidden="true" /> },
+  {
+    label: 'Workflow automation',
+    value: 'Rewst / n8n / Power Automate',
+    icon: <ShieldCheck className="h-4 w-4" aria-hidden="true" />,
+  },
+  {
+    label: 'Cloud automation',
+    value: 'Azure / AWS / GWS',
+    icon: <CloudCog className="h-4 w-4" aria-hidden="true" />,
+  },
+  {
+    label: 'Service reliability',
+    value: 'Approvals / audit / SLO-aware',
+    icon: <Sparkles className="h-4 w-4" aria-hidden="true" />,
+  },
 ];
 
 const capabilityIconFor = (capability: string) => {
   const normalized = capability.toLowerCase();
-  if (normalized.includes('orchestration')) return <Layers className="h-4 w-4 text-primary-500" aria-hidden="true" />;
-  if (normalized.includes('cloud')) return <CloudCog className="h-4 w-4 text-primary-500" aria-hidden="true" />;
-  if (normalized.includes('identity') || normalized.includes('security')) return <ShieldCheck className="h-4 w-4 text-primary-500" aria-hidden="true" />;
-  if (normalized.includes('api') || normalized.includes('integration')) return <Sparkles className="h-4 w-4 text-primary-500" aria-hidden="true" />;
-  if (normalized.includes('reliability')) return <Rocket className="h-4 w-4 text-primary-500" aria-hidden="true" />;
+  if (normalized.includes('orchestration'))
+    return <Layers className="h-4 w-4 text-primary-500" aria-hidden="true" />;
+  if (normalized.includes('cloud'))
+    return <CloudCog className="h-4 w-4 text-primary-500" aria-hidden="true" />;
+  if (normalized.includes('identity') || normalized.includes('security'))
+    return <ShieldCheck className="h-4 w-4 text-primary-500" aria-hidden="true" />;
+  if (normalized.includes('api') || normalized.includes('integration'))
+    return <Sparkles className="h-4 w-4 text-primary-500" aria-hidden="true" />;
+  if (normalized.includes('reliability'))
+    return <Rocket className="h-4 w-4 text-primary-500" aria-hidden="true" />;
   return <Layers className="h-4 w-4 text-primary-500" aria-hidden="true" />;
 };
 
@@ -65,7 +87,10 @@ const HeroStats = ({ className = '' }: { className?: string }) => (
     <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/0 dark:from-white/5" />
     <div className="relative grid gap-3 sm:grid-cols-3">
       {heroStats.map((item) => (
-        <div key={item.label} className="flex items-center gap-3 rounded-xl bg-[var(--card)]/50 px-3 py-2 shadow-sm ring-1 ring-[var(--border)]">
+        <div
+          key={item.label}
+          className="flex items-center gap-3 rounded-xl bg-[var(--card)]/50 px-3 py-2 shadow-sm ring-1 ring-[var(--border)]"
+        >
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 text-primary-700 dark:bg-primary-900/40 dark:text-primary-100">
             {item.icon}
           </div>
@@ -95,8 +120,8 @@ const Hero = ({ onOpenCV, cvButtonRef }: HeroProps) => (
               {SITE.role}
             </p>
             <h1 className="max-w-3xl text-3xl font-semibold sm:text-4xl">
-              {SITE.name} - building multi-tenant automation and systems that stay reliable as they
-              scale.
+              {SITE.name} builds MSP workflow automation, API integrations, and operations tooling
+              that reduce manual work.
             </h1>
             <p className="max-w-3xl text-base text-[var(--muted)]">{SITE.summary}</p>
             <div className="flex flex-wrap gap-2">
@@ -156,9 +181,9 @@ const About = () => (
         <Card title="Who I am" subtitle="Personal snapshot">
           <p className="text-sm text-[var(--muted)] leading-relaxed">
             I&apos;m Naveen Fernando, an Automation & Systems Engineer in Colombo. I build workflow
-            automation for MSP environments with Rewst, n8n, Python, and PowerShell, and keep
-            cloud automation lean across Azure and AWS. I value composability, safety, and clear
-            guardrails so teams can move fast without surprises.
+            automation for MSP environments at Platinum Technology, working remotely from Sri Lanka.
+            I use Rewst, n8n, Python, PowerShell, and cloud automation to keep service delivery
+            reliable, reusable, and safe across client environments.
           </p>
         </Card>
         <Card title="Principles" subtitle="How I approach systems">
@@ -180,12 +205,18 @@ const About = () => (
         <Card title="Experience & education" subtitle="From LinkedIn profile">
           <ul className="space-y-2">
             <li className="flex flex-col">
-              <span className="font-semibold">Systems Engineer | Offshore IT Solutions</span>
-              <span className="text-xs text-[var(--muted)]">May 2025 - Present | Remote (Rewst, AWS automation)</span>
+              <span className="font-semibold">Systems Engineer | Platinum Technology</span>
+              <span className="text-xs text-[var(--muted)]">
+                May 2025 - Present | Remote from Sri Lanka (MSP automation, Rewst, AWS automation)
+              </span>
             </li>
             <li className="flex flex-col">
-              <span className="font-semibold">Associate Systems Engineer | Offshore IT Solutions</span>
-              <span className="text-xs text-[var(--muted)]">Oct 2023 - May 2025 | Sri Lanka (Rewst, PowerShell)</span>
+              <span className="font-semibold">
+                Associate Systems Engineer | Offshore IT Solutions
+              </span>
+              <span className="text-xs text-[var(--muted)]">
+                Oct 2023 - May 2025 | Sri Lanka (Rewst, PowerShell)
+              </span>
             </li>
             <li className="flex flex-col">
               <span className="font-semibold">Systems Support Technician</span>
@@ -206,6 +237,27 @@ const About = () => (
           loading="lazy"
         />
       </div>
+    </div>
+  </Section>
+);
+
+const CurrentFocus = () => (
+  <Section
+    id="focus"
+    title="What I build"
+    eyebrow="Current focus"
+    description="Practical automation areas I keep improving through production work, personal tooling, and public portfolio projects."
+  >
+    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+      {CURRENT_FOCUS.map((item) => (
+        <div
+          key={item}
+          className="flex items-start gap-3 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 shadow-sm"
+        >
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary-500" aria-hidden="true" />
+          <p className="text-sm font-medium text-[var(--text)]">{item}</p>
+        </div>
+      ))}
     </div>
   </Section>
 );
@@ -232,7 +284,10 @@ const Skills = () => (
         >
           <div className="flex flex-wrap gap-2">
             {capability.skills.map((skill) => (
-              <div key={skill.name} className="flex flex-col gap-1 rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 py-2 shadow-sm">
+              <div
+                key={skill.name}
+                className="flex flex-col gap-1 rounded-xl border border-[var(--border)] bg-[var(--card)] px-3 py-2 shadow-sm"
+              >
                 <div className="flex items-center gap-2">
                   <Badge tone={levelTone[skill.level]}>{levelLabel[skill.level]}</Badge>
                   <p className="text-sm font-semibold text-[var(--text)]">{skill.name}</p>
@@ -433,7 +488,10 @@ const LiveGitHub = () => {
             {loading && (
               <div className="grid gap-3 md:grid-cols-2">
                 {Array.from({ length: 4 }).map((_, idx) => (
-                  <div key={idx} className="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-4 shadow-sm">
+                  <div
+                    key={idx}
+                    className="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-4 shadow-sm"
+                  >
                     <SkeletonLine className="w-2/3" />
                     <SkeletonLine className="mt-2 w-1/2" />
                     <div className="mt-3 space-y-2">
@@ -461,7 +519,10 @@ const LiveGitHub = () => {
             {!loading && !error && repos.length > 0 && (
               <div className="grid gap-3 md:grid-cols-2">
                 {repos.map((repo) => (
-                  <div key={repo.id} className="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-4 shadow-sm">
+                  <div
+                    key={repo.id}
+                    className="rounded-2xl border border-[var(--border)] bg-[var(--card)]/80 p-4 shadow-sm"
+                  >
                     <div className="flex items-center justify-between gap-2">
                       <a
                         href={repo.html_url}
@@ -473,7 +534,9 @@ const LiveGitHub = () => {
                       </a>
                       <Badge tone="info">{repo.language || 'N/A'}</Badge>
                     </div>
-                    <p className="mt-2 text-xs text-[var(--muted)]">{repo.description || 'No description'}</p>
+                    <p className="mt-2 text-xs text-[var(--muted)]">
+                      {repo.description || 'No description'}
+                    </p>
                     <div className="mt-3 flex items-center gap-3 text-xs text-[var(--muted)]">
                       <span>Stars: {repo.stargazers_count}</span>
                       <span>Forks: {repo.forks_count}</span>
@@ -500,7 +563,11 @@ const Learning = () => (
     <div className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
       <div className="space-y-4">
         {learningContent.tracks.map((track) => (
-          <Card key={track.title} title={track.title} subtitle={`${track.focus} - ETA ${track.eta}`}>
+          <Card
+            key={track.title}
+            title={track.title}
+            subtitle={`${track.focus} - ETA ${track.eta}`}
+          >
             <ul className="space-y-2 list-spaced">
               {track.items.map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -516,7 +583,10 @@ const Learning = () => (
         <Card title="Certifications" subtitle="Completed and planned">
           <div className="grid gap-3 sm:grid-cols-2">
             {learningContent.certifications.map((cert) => (
-              <div key={cert.title} className="flex items-start gap-2 rounded-xl border border-[var(--border)] p-3">
+              <div
+                key={cert.title}
+                className="flex items-start gap-2 rounded-xl border border-[var(--border)] p-3"
+              >
                 <GraduationCap className="mt-0.5 h-4 w-4 text-primary-500" aria-hidden="true" />
                 <div>
                   <p className="text-sm font-semibold">{cert.title}</p>
@@ -623,6 +693,7 @@ const HomePage = () => {
     <>
       <Hero onOpenCV={() => setCvOpen(true)} cvButtonRef={cvButtonRef} />
       <About />
+      <CurrentFocus />
       <Skills />
       {UI_FLAGS.showProjects && <Projects />}
       <LiveGitHub />
@@ -637,12 +708,12 @@ const HomePage = () => {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
         >
           <div className="relative flex h-[80vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-[var(--card)] shadow-card">
-              <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
-                <div className="flex items-center gap-2">
-                  <Download className="h-4 w-4 text-primary-500" aria-hidden="true" />
-                  <p className="text-sm font-semibold">CV preview (PDF-ready)</p>
-                </div>
-                <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
+              <div className="flex items-center gap-2">
+                <Download className="h-4 w-4 text-primary-500" aria-hidden="true" />
+                <p className="text-sm font-semibold">CV preview (PDF-ready)</p>
+              </div>
+              <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={handleDownloadPdf}

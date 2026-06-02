@@ -11,20 +11,43 @@
     }
   ],
   "certifications": [
-    { "title": "Clean Automation Certified: Automation Engineer (Rewst, Jan 2025)", "status": "completed" },
-    { "title": "Foundations Certified: Automation Practitioner (Rewst, Oct 2024)", "status": "completed" },
-    { "title": "Microsoft Certified: Azure Fundamentals (Dec 2023)", "status": "completed" },
-    { "title": "Cisco CyberOps Associate (Dec 2022)", "status": "completed" },
-    { "title": "CCNA: Enterprise Networking, Security, and Automation (Jul 2022)", "status": "completed" },
-    { "title": "Google IT Support / Cloud Fundamentals (Jan 2023)", "status": "completed" }
+    {
+      "title": "Clean Automation Certified: Automation Engineer (Rewst, Jan 2025)",
+      "status": "completed"
+    },
+    {
+      "title": "Foundations Certified: Automation Practitioner (Rewst, Oct 2024)",
+      "status": "completed"
+    },
+    {
+      "title": "Microsoft Certified: Azure Fundamentals (Dec 2023)",
+      "status": "completed"
+    },
+    {
+      "title": "Cisco CyberOps Associate (Dec 2022)",
+      "status": "completed"
+    },
+    {
+      "title": "CCNA: Enterprise Networking, Security, and Automation (Jul 2022)",
+      "status": "completed"
+    },
+    {
+      "title": "Google IT Support / Cloud Fundamentals (Jan 2023)",
+      "status": "completed"
+    }
   ],
   "experiments": [
-    "Hands-on discovery work with agent CLI patterns.",
-    "Agent CLI usage in automations to validate reliability and ergonomics.",
-    "Connect devices via SSH from n8n to trigger agent CLI actions for automation/read/write in local environments.",
-    "Work with MSP triggers to build n8n workflows that hand off tasks to AI agents end-to-end."
+    "Evaluating AI agent CLI workflows for safe automation handoffs, local task execution, and MSP workflow augmentation.",
+    "Testing agent-assisted reliability checks for n8n and Rewst workflows before moving patterns into reusable runbooks.",
+    "Prototyping controlled n8n-to-agent handoffs for SSH-based automation in local and lab environments.",
+    "Exploring MSP triggers that can hand off well-scoped tasks to AI agents end-to-end with approvals and audit trails."
   ],
   "roadmap": [
+    {
+      "milestone": "Fernando Family site",
+      "impact": "Build a lightweight family site for updates and shared resources, using it as a practical Next.js/TypeScript content and deployment exercise rather than a primary professional project.",
+      "timeline": "Planned"
+    },
     {
       "milestone": "Self-hostable home automation stack",
       "impact": "Discover, plan, and implement a self-hostable, open-source stack (free-tier friendly) for home automation/CCTV using Frigate NVR and local AI surveillance.",

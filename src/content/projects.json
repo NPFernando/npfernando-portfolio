@@ -1,5 +1,23 @@
 [
   {
+    "name": "ITOps-Toolkit",
+    "problem": "Daily IT operations often require quick utilities such as password generation, IP lookup, and small diagnostics. Public websites can be ad-heavy, inconsistent, or unclear about whether pasted data is read or stored.",
+    "architecture": "Personal Python toolkit for local-first IT operations tasks. The app is designed to grow feature-by-feature from real work scenarios, keeping common checks and helpers in a trusted utility instead of relying on random external sites.",
+    "tools": ["Python", "CLI", "pytest", "ruff", "GitHub Actions"],
+    "impact": "Provides a trusted place for repeatable IT support helpers and creates a foundation for future MSP runbook and diagnostics automation.",
+    "tradeOffs": [
+      "Started with practical daily-use utilities instead of a broad platform so features can be added only when real work creates the need.",
+      "Local-first design favors privacy and control for sensitive lookups or generated values."
+    ],
+    "status": "Public GitHub project",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/NPFernando/ITOps-Toolkit"
+      }
+    ]
+  },
+  {
     "name": "n8n Community Node: text.lk SMS",
     "problem": "Required reliable SMS notifications for a billing-related project in Sri Lanka, but n8n lacked a native SMS integration suitable for local providers.",
     "architecture": "Designed and developed a custom n8n community node (n8n-nodes-textdotlk) that wraps the text.lk SMS API, enabling dynamic SMS delivery to any phone number directly within n8n workflows without relying on repeated custom HTTP nodes.",
@@ -11,8 +29,14 @@
     ],
     "status": "Public via npm and GitHub",
     "links": [
-      { "label": "GitHub", "href": "https://github.com/NPFernando/n8n-nodes-textdotlk" },
-      { "label": "npm", "href": "https://www.npmjs.com/package/n8n-nodes-textdotlk" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/NPFernando/n8n-nodes-textdotlk"
+      },
+      {
+        "label": "npm",
+        "href": "https://www.npmjs.com/package/n8n-nodes-textdotlk"
+      }
     ]
   },
   {
@@ -25,14 +49,10 @@
     ],
     "status": "Hosted",
     "links": [
-      { "label": "Naveen Fernando Portfolio", "href": "https://portfolio.naveen.fernandofamily.com" }
+      {
+        "label": "Naveen Fernando Portfolio",
+        "href": "https://portfolio.naveen.fernandofamily.com"
+      }
     ]
-  },
-  {
-    "name": "Fernando Family (coming soon)",
-    "problem": "Family site for updates and shared resources.",
-    "architecture": "Lightweight static site with a CMS-friendly structure.",
-    "tools": ["Next.js", "TypeScript"],
-    "status": "Coming soon"
   }
 ]

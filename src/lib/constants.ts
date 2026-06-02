@@ -8,7 +8,7 @@ export const SITE = {
     'Identity & lifecycle automation',
   ],
   summary:
-    'Automation & Systems Engineer (B.Sc. Computer Systems & Networking) delivering multi-tenant workflow automation across Rewst, n8n, Power Automate, Python, PowerShell, JavaScript/TypeScript, and Azure/AWS/GWS to reduce operational toil for MSP teams.',
+    'Automation & Systems Engineer at Platinum Technology, working remotely from Sri Lanka on MSP workflow automation, API integrations, identity lifecycle automation, and operations tooling across Rewst, n8n, Power Automate, Python, PowerShell, TypeScript, and Azure/AWS/GWS.',
   resumeUrl: '/cv/index.html',
   email: 'fernandonaveen2000@gmail.com',
   emailObfuscated: 'fernandonaveen2000 [at] gmail.com',
@@ -16,6 +16,15 @@ export const SITE = {
   linkedin: 'https://www.linkedin.com/in/npfernando',
   contentVersion: '2025.12.16',
 };
+
+export const CURRENT_FOCUS = [
+  'MSP workflow automation and service desk runbooks',
+  'n8n, Rewst, and Power Automate workflow design',
+  'API/webhook integrations between SaaS and IT operations tools',
+  'Entra ID and Microsoft Graph lifecycle automation',
+  'Python and PowerShell utilities for daily IT operations',
+  'Monitoring, rollback, and reliability guardrails for automations',
+];
 
 export const NAV_ITEMS = [
   { id: 'hero', label: 'Home' },
