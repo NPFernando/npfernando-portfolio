@@ -33,7 +33,7 @@ module.exports = {
       },
       backgroundImage: {
         grid: 'linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)',
-        hero: "url('/img/cover.png')",
+        hero: 'radial-gradient(circle at top left, rgba(47, 91, 255, 0.22), transparent 35%), radial-gradient(circle at top right, rgba(56, 163, 165, 0.18), transparent 30%)',
       },
       boxShadow: {
         card: '0 20px 80px rgba(10, 14, 60, 0.15)',
