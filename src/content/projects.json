@@ -40,6 +40,24 @@
     ]
   },
   {
+    "name": "System Healthcheck",
+    "problem": "Local automation workstations can drift over time: services bind too broadly, Docker containers lose hardening settings, credentials get permissive file modes, and toolchain health issues only surface when work is blocked.",
+    "architecture": "Dependency-light Bash and Python toolkit for WSL/Linux workstation security and readiness checks. It inspects listeners, systemd state, Docker/SearXNG hardening, sensitive file permissions, and Hermes Agent health, then renders static HTML, Markdown, JSON, and history timeline artifacts.",
+    "tools": ["Bash", "Python", "unittest", "Docker", "GitHub Actions", "Hermes Agent"],
+    "impact": "Turns workstation readiness into a repeatable, testable health signal with cron-friendly silent OK behavior and alert-ready reports.",
+    "tradeOffs": [
+      "Keeps dependencies minimal so the checker works on fresh WSL/Linux environments without a package install step.",
+      "Generated logs and dashboards stay local by default because they can reveal hostnames, usernames, paths, and service names."
+    ],
+    "status": "Public GitHub project",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/NPFernando/system-healthcheck"
+      }
+    ]
+  },
+  {
     "name": "npfernando-portfolio",
     "problem": "Needed a personal site for achievements and project showcase.",
     "architecture": "Static-first, Azure-optimized portfolio built with React, Vite, and TypeScript. Content is typed and validated with Zod, styled with Tailwind CSS, and wired for GitHub + Azure Static Web Apps CI/CD.",
